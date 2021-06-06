@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\RoutesAll;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -15,6 +15,7 @@ use App\Http\Controllers\ProfileController;
 */
 Route::resource('profile', ProfileController::class);
 Route::get('/profile/search/{name}', [ProfileController::class, 'search']);
+Route::get('/routes/search/{no}', [RoutesAll::class, 'show']);
 // Route::get('/profile', [ProfileController::class, 'index']);
 // Route::post('/profile', [ProfileController::class. 'store']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
