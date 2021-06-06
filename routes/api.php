@@ -16,6 +16,7 @@ use App\Http\Controllers\ProfileController;
 Route::resource('profile', ProfileController::class);
 Route::get('/profile/search/{name}', [ProfileController::class, 'search']);
 Route::get('/routes/search/{no}', [RoutesAll::class, 'show']);
+Route::get('/routes/', [RoutesAll::class, 'index']);
 // Route::get('/profile', [ProfileController::class, 'index']);
 // Route::post('/profile', [ProfileController::class. 'store']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
